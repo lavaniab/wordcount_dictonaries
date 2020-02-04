@@ -24,13 +24,31 @@ def count_word(file_name):
 
     for line in file_name:
         line = line.rstrip()
+        # line = line.strip(',')
+        print(line)
+        # line = line.rstrip('.')
         words = line.split(' ')
-        print(words)
+       
+        # print(words)
         # line.rstrip(' ')
         # print(line)
 
         for word in words:
+            words_to_modify = []
+            punctuation = ['!', '"', '#', '$', '%', '&', "'", '(', ')', '*', 
+                '+', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', " \ ", 
+                ']', '^', '`', '{', '|', '}', '~']
+            if word in words == punctuation:
+                words_to_modify.append(word)
+            print(words_to_modify)
+            word = word.lower()
+            word = word.strip('punctuation')
+            #word = word.lstrip('punctuation') removes I as well
+            # word = word.strip(',')
+            # word = word.strip('.')
             word_count[word] = word_count.get(word, 0) + 1
+
+    file_name.close()
 
     return word_count
 
