@@ -38,12 +38,13 @@ def count_word(file_name):
             punctuation = ['!', '"', '#', '$', '%', '&', "'", '(', ')', '*', 
                 '+', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', " \ ", 
                 ']', '^', '`', '{', '|', '}', '~']
-            if word in words == punctuation:
+            if word in words  punctuation:
                 words_to_modify.append(word)
             print(words_to_modify)
             word = word.lower()
-            word = word.strip('punctuation')
-            #word = word.lstrip('punctuation') removes I as well
+            word = word.strip('punctuation') # trying to find a way to strip all 
+        # punctuation without typing strip() for each type
+            # word = word.lstrip('punctuation') removes I as well
             # word = word.strip(',')
             # word = word.strip('.')
             word_count[word] = word_count.get(word, 0) + 1
